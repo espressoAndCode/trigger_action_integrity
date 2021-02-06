@@ -1,0 +1,17 @@
+wes@ubuntu:~/picon/examples/unit_tests$ opt -load /home/wes/picon/llvm_pass/build/CFI/libCFI.so \
+> -cfi -cfi-level=1 \
+> -cfi-ignore=ignored_functions.txt \
+> -cfi-prefix=build.cfi/test_rop_cfi \
+> -S -o build.cfi/test_rop_cfi.bc build.cfi/test_rop.bc
+Error opening '/home/wes/picon/llvm_pass/build/CFI/libCFI.so': /home/wes/picon/llvm_pass/build/CFI/libCFI.so: undefined symbol: _ZNK4llvm10ModulePass17createPrinterPassERNS_11raw_ostreamERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  -load request ignored.
+opt: Unknown command line argument '-cfi'.  Try: 'opt -help'
+opt: Did you mean '-fcfi'?
+opt: Unknown command line argument '-cfi-level=1'.  Try: 'opt -help'
+opt: Did you mean '-cfi-type=1'?
+opt: Unknown command line argument '-cfi-ignore=ignored_functions.txt'.  Try: 'opt -help'
+opt: Did you mean '-cfi-type=ignored_functions.txt'?
+opt: Unknown command line argument '-cfi-prefix=build.cfi/test_rop_cfi'.  Try: 'opt -help'
+opt: Did you mean '-cfi-type=build.cfi/test_rop_cfi'?
+wes@ubuntu:~/picon/examples/unit_tests$ llvm-config --version
+3.6.0
